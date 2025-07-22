@@ -133,3 +133,9 @@ python app.py
 
 <carbon-offset-estimator></carbon-offset-estimator>
 ```
+
+### Screenshots
+
+![Widget Screenshot](./src/assets/before-opt-in.png)
+![Widget Screenshot](./src/assets/after-opt-in.png)
+![Report Screenshot](./src/assets/view-offset-report.png)
