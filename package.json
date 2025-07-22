@@ -39,12 +39,17 @@
     "generate": "stencil generate"
   },
   "devDependencies": {
+    "@jest/transform": "^30.0.4",
+    "@jest/types": "^30.0.1",
     "@stencil/core": "^4.27.1",
+    "@types/istanbul-lib-report": "^3.0.3",
     "@types/jest": "^29.5.14",
     "@types/node": "^22.13.5",
+    "istanbul-lib-report": "^3.0.1",
     "jest": "^29.7.0",
     "jest-cli": "^29.7.0",
-    "puppeteer": "^24.3.0"
+    "puppeteer": "^24.3.0",
+    "rxjs": "^6.5.4"
   },
   "license": "MIT"
 }

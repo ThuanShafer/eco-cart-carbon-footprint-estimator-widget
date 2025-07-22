@@ -6,56 +6,32 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface CarbonOffsetEstimator {
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLCarbonOffsetEstimatorElement extends Components.CarbonOffsetEstimator, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLCarbonOffsetEstimatorElement: {
+        prototype: HTMLCarbonOffsetEstimatorElement;
+        new (): HTMLCarbonOffsetEstimatorElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "carbon-offset-estimator": HTMLCarbonOffsetEstimatorElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface CarbonOffsetEstimator {
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "carbon-offset-estimator": CarbonOffsetEstimator;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "carbon-offset-estimator": LocalJSX.CarbonOffsetEstimator & JSXBase.HTMLAttributes<HTMLCarbonOffsetEstimatorElement>;
         }
     }
 }

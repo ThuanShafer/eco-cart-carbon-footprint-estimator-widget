@@ -1,6 +1,5 @@
 import { Observable } from 'rxjs';
-import { HTTP } from '../http/httpServiceObservable';
-import { map } from 'rxjs/operators';
+import { HTTP } from '../http/httpService';
 
 const BACKEND_URL = 'http://127.0.0.1:5000';
 
@@ -16,17 +15,7 @@ export class ConfigAPIService {
    * Fetches the widget configuration from the backend.
    * @returns Promise resolving to WidgetConfig.
    */
-  async fetchWidgetConfig(): Observable<WidgetConfig> {
-    try {
-      const response = await fetch(`${BACKEND_URL}/api/widget-config`);
-      if (!response.ok) {
-        const errorText = await response.text();
-        throw new Error(`Failed to fetch widget config: ${response.statusText} - ${errorText}`);
-      }
-      return await response.json();
-    } catch (error) {
-      console.error('API Service: Error fetching widget config:', error);
-      throw error;
-    }
+  fetchWidgetConfig(): Observable<WidgetConfig> {
+    return HTTP.get(`${BACKEND_URL}/api/widget-config`);
   }
 }

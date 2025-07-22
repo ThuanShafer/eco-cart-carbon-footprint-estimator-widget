@@ -9,18 +9,16 @@ export const config: Config = {
     },
     {
       type: 'dist-custom-elements',
-      customElementsExportBehavior: 'auto-define-custom-elements',
-      externalRuntime: false,
-    },
-    {
-      type: 'docs-readme',
     },
     {
       type: 'www',
-      serviceWorker: null, // disable service workers
+      serviceWorker: null,
+      copy: [
+        { src: 'index.html' },
+        { src: 'styles.css' },
+        { src: 'scripts.js' }
+      ]
     },
   ],
-  testing: {
-    browserHeadless: "shell",
-  },
+  buildEs5: 'prod',
 };
