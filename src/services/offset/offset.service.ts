@@ -27,7 +27,7 @@ export class OffsetAPIService {
    * @returns Observable resolving to EstimateOffsetResponse.
    */
   estimateOffset(subtotal: number): Observable<EstimateOffsetResponse> {
-    const payload = { products: [{ price: subtotal, quantity: 1 }] };
+    const payload = {subtotal: subtotal, products: [], categories: [], weights: []};
     return HTTP.post(`${BACKEND_URL}/api/estimate-offset`, payload);
   }
 

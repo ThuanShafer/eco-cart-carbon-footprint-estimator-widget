@@ -7,6 +7,10 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface CarbonOffsetEstimator {
+        /**
+          * @default 303.40
+         */
+        "subTotal": number;
     }
 }
 declare global {
@@ -22,6 +26,10 @@ declare global {
 }
 declare namespace LocalJSX {
     interface CarbonOffsetEstimator {
+        /**
+          * @default 303.40
+         */
+        "subTotal"?: number;
     }
     interface IntrinsicElements {
         "carbon-offset-estimator": CarbonOffsetEstimator;

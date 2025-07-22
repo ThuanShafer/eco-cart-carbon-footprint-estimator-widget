@@ -3,12 +3,12 @@
   <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>My Eco Cart</title>
+      <title>Eco Cart</title>
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="styles.css" />
-      <script src="scripts.js"></script>
+      <link rel="stylesheet" href="demos/styles.css" />
+      <script src="demos/scripts.js"></script>
 
-      <!-- Script Tag to inject the Widget into the Merchant Store Cart -->
+      <!-- Script Tag to inject the Widget into the merchant's store cart -->
       <script type="module" src="/build/carbon-offset-estimator-widget.esm.js"></script>
       <script nomodule src="/build/carbon-offset-estimator-widget.js"></script>
   </head>
@@ -18,11 +18,15 @@
           <div class="cart-items">
               <div class="cart-item" data-item-id="item-1" data-price-per-unit="84.99">
                   <div class="item-details">
-                      <img class="product-thumbnail" src="assets/gold_standard_whey.webp" alt="ON Whey Gold Standard"/>
+                      <img class="product-thumbnail" src="assets/gold_standard_whey.png"
+                           alt="ON Whey Gold Standard"/>
                       <div>
-                          <h3 href="https://www.optimumnutrition.com/en-us/Products/Shakes-%26-Powders/GOLD-STANDARD-100%25-WHEY%E2%84%A2/p/gold-standard-100-whey-protein">
+                        <h3>
+                          <a
+                            href="https://www.optimumnutrition.com/en-us/Products/Shakes-%26-Powders/GOLD-STANDARD-100%25-WHEY%E2%84%A2/p/gold-standard-100-whey-protein">
                             ON Whey Gold Standard
-                          </h3>
+                          </a>
+                        </h3>
                           <p>$84.99</p>
                       </div>
                   </div>
@@ -39,11 +43,12 @@
                 <span class="subtotal" id="cart-subtotal">$303.40 USD</span></p>
               <p class="tax-text">Taxes and shipping calculated at checkout</p>
              <div id="cart_div">
-                  <carbon-offset-estimator ></carbon-offset-estimator>
+                  <!-- Widget component to be embedded in to the merchant's store cart -->
+                  <carbon-offset-estimator></carbon-offset-estimator>
               </div>
 
               <button class="checkout-button">Check out</button>
-              <button class="paypal-button"><img class="payment-icon" src="assets/paypal-logo.webp" alt=""/></button>
+              <button class="paypal-button"><img class="payment-icon" src="assets/paypal-logo.png" alt=""/></button>
           </div>
       </div>
   </body>

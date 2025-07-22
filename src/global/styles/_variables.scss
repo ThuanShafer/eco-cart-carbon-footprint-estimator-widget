@@ -1,0 +1,45 @@
+// Colors
+$color-primary-green-light: #f0fdf4;
+$color-primary-green-medium: #34d399;
+$color-primary-green-dark: #10b981;
+$color-text-dark: #1f2937;
+$color-text-light: #f9fafb;
+$color-border-light: #ccc;
+$color-background-white: #fff;
+$color-hover-light: #f0f0f0;
+
+// Alert/Status Colors
+$color-warning-bg: #fffbeb;
+$color-warning-border: #fbbf24;
+$color-warning-text: #92400e;
+
+$color-error-bg: #fee2e2;
+$color-error-border: #ef4444;
+$color-error-text: #991b1b;
+
+// Spacing
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 0.75rem;
+$spacing-lg: 1rem;
+$spacing-xl: 1.25rem;
+
+// Border Radius
+$border-radius-sm: 0.25rem;
+$border-radius-md: 0.5rem;
+
+// Box Shadow
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+$shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+// Font
+$font-family-inter: 'Inter', sans-serif;
+$font-size-base: 1rem; // 16px
+$font-size-sm: 0.9rem; // 14.4px
+$font-size-xs: 0.8rem; // 12.8px
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$line-height-base: 1.5;

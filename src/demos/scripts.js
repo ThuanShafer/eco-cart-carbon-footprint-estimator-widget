@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const cartItemsContainer = document.querySelector('.cart-items');
   const cartSubtotalElement = document.getElementById('cart-subtotal');
 
+  const carbonOffsetEstimator = document.querySelector('carbon-offset-estimator');
+
   function updateItemPrice(itemId, quantity) {
     const itemElement = document.querySelector(`.cart-item[data-item-id="${itemId}"]`);
     const pricePerUnit = parseFloat(itemElement.dataset.pricePerUnit);
@@ -18,16 +20,26 @@ document.addEventListener('DOMContentLoaded', () => {
         const pricePerUnit = parseFloat(itemElement.dataset.pricePerUnit);
         totalSubtotal += (pricePerUnit * quantity);
     });
-    cartSubtotalElement.textContent = `$${totalSubtotal.toFixed(2)} USD`;
+
+    const formattedTotal = totalSubtotal.toFixed(2);
+    cartSubtotalElement.textContent = `$${formattedTotal} USD`;
 
     const subtotalChangeEvent = new CustomEvent('cartSubtotalChanged', {
-        detail: { newSubtotal: totalSubtotal.toFixed(2) }
+        detail: { newSubtotal: parseFloat(formattedTotal) }
     });
     document.dispatchEvent(subtotalChangeEvent);
   }
 
+  document.addEventListener('cartSubtotalChanged', (event) => {
+      const newSubtotal = event.detail.newSubtotal;
+      if (carbonOffsetEstimator) {
+          carbonOffsetEstimator.subTotal = newSubtotal;
+      }
+  });
+
+
   cartItemsContainer.addEventListener('click', (event) => {
-      const button = event.target.closest('.quantity-button');
+      const button = (event.target).closest('.quantity-button');
       if (!button) return;
 
       const itemId = button.dataset.itemId;
@@ -43,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
           return;
       }
 
-      quantityDisplay.textContent = currentQuantity;
+      quantityDisplay.textContent = currentQuantity.toString();
       updateItemPrice(itemId, currentQuantity);
       updateCartSubtotal();
   });

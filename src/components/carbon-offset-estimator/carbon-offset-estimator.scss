@@ -1,0 +1,111 @@
+@use "../../global/styles/variables" as *;
+
+:host {
+  display: block;
+  font-family: $font-family-inter, serif;
+  box-sizing: border-box;
+}
+
+.carbon-offset-widget {
+  background-color: $color-primary-green-light;
+  border: 1px solid $color-primary-green-medium;
+  border-radius: $border-radius-md;
+  padding: $spacing-lg;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: $shadow-md;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    box-shadow: $shadow-lg;
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: $color-text-dark;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    margin: 1rem 0;
+  }
+
+  input[type="checkbox"] {
+    width: $spacing-xl;
+    height: $spacing-xl;
+    margin-right: $spacing-md;
+    accent-color: $color-primary-green-medium;
+    border-radius: $border-radius-sm;
+    cursor: pointer;
+  }
+
+  .verbiage {
+    font-weight: $font-weight-medium;
+  }
+
+  &.loading,
+  &.error {
+    background-color: $color-warning-bg;
+    border-color: $color-warning-border;
+    color: $color-warning-text;
+    text-align: center;
+    justify-content: center;
+    font-family: $font-family-inter, serif;
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+  }
+
+  &.error {
+    background-color: $color-error-bg;
+    border-color: $color-error-border;
+    color: $color-error-text;
+  }
+}
+
+.context-menu {
+  position: fixed;
+  background-color: $color-background-white;
+  border: 1px solid $color-border-light;
+  box-shadow: $shadow-lg;
+  border-radius: $border-radius-sm;
+  z-index: 1000;
+  min-width: 150px;
+  padding: 5px 0;
+  font-family: $font-family-inter, serif;
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    padding: 8px 15px;
+    cursor: pointer;
+    white-space: nowrap;
+    font-family: $font-family-inter, serif;
+    font-size: $font-size-base;
+    font-weight: $font-weight-normal;
+
+    &:hover {
+      background-color: $color-hover-light;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .carbon-offset-widget {
+    padding: $spacing-md;
+    margin-top: $spacing-lg;
+    font-size: $font-size-sm;
+
+    input[type="checkbox"] {
+      width: $spacing-lg;
+      height: $spacing-lg;
+      margin-right: $spacing-sm;
+    }
+  }
+}
